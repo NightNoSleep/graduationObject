@@ -13,15 +13,24 @@
 		display: flex;
 		border-top: 1px solid #cccccc;
 		box-sizing: border-box;
+		
 		>.foot_nav{
 			flex: 1;
-			line-height: 15.53vw;
-			text-align: center;
+			line-height: 12.53vw;
 			height: 12.53vw;
-			img{
+			.cake_nav{
+				color:#eb5269;
+			}
+			a{
+				display: block;
+				margin-left: 13vw;
+				color:#cccccc;
 				width:6.667vw;
 				height: 6.667vw;
-			};
+				i{
+					font-size: 7vw;
+				};
+			}
 		}
 		.foot_nav:nth-child(2){
 			position: relative;

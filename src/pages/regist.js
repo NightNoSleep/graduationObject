@@ -1,15 +1,15 @@
 import React,{ Component } from 'react';
-import './person.scss';
-class Person extends Component{
+import './regist.scss';
+class Regist extends Component{
 	constructor(){
 		super();
 	}
 	render(){
 
 		return(
-			<div>person</div>
+			<div>Regist</div>
 		)
 	}
 }
 
-export default Person
+export default Regist
