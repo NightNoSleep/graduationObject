@@ -1,19 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import Cake from './pages/cake';
+import Cart from './pages/cart';
+import Person from './pages/person';
+import Home from "./img/home.png";
+import Shopping from "./img/shopping-basket.png";
+import Mine from "./img/mine.png";
+import './App.scss';
+import {
+  BrowserRouter as Router,
+  Route,
+  NavLink,
+  Switch,
+  Redirect
+} from 'react-router-dom';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Router>
+        <div className='app_cake'>
+          <div className='cake_main'>
+            <Switch>
+              <Route path='/cake' component={Cake}></Route>
+              <Route path='/cart' component={Cart}></Route>
+              <Route path='/person' component={Person}></Route>
+              <Redirect path='/' to='/cake' exact></Redirect>
+            </Switch>
+          </div>
+          <div className='footer_nav'>
+            <div className='foot_nav'><NavLink activeClassName='cake_nav' to='/cake'><img src={Home} /></NavLink></div>
+            <div className='foot_nav'><NavLink activeClassName='cake_nav' to='/cart'><img src={Shopping} /><span className='cart_amount'>0</span></NavLink></div>
+            <div className='foot_nav'><NavLink activeClassName='cake_nav' to='/person'><img src={Mine} /></NavLink></div>
+          </div>
+        </div>
+      </Router>
     );
   }
 }
