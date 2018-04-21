@@ -8,7 +8,7 @@
 			width: 100%;
 		}
 	}
-	.login_login{
+	.login_main{
 		padding: 0 10.67vw;
 		box-sizing: border-box;
 		input{
@@ -47,8 +47,10 @@
 		}
 		.loginToRegist,.quickLogin{
 			position: relative;
-			left: 57vw;
+			left: 62vw;
 			display: block;
+			width: 20vw;
+			font-size:3vw;
 			color:#3c78c8;
 			margin-top: 6vw;
 		}

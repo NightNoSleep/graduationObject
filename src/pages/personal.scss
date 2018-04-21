@@ -1,0 +1,30 @@
+.cake_personal{
+	background: #cccccc;
+	width: 100%;
+	height: 100%;
+	.personal_header{
+		width:100%;
+		background: white;
+		height: 22.67vw;
+		padding: 3vw;
+		box-sizing: border-box;
+		img{
+			width:16vw;
+			height:16vw;
+			float: left;
+		}
+		ul{
+			float: left;
+			margin:0;
+			margin-left: -7vw;
+			li{
+				margin-top: 2vw;
+				font-size: 2vw;
+			}
+		}
+		.goPerson{
+			float: right;
+			margin-top: 6vw;
+		}
+	}
+}

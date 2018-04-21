@@ -21,7 +21,7 @@ class App extends Component {
   constructor(){
     super();
     this.state={
-      isLogin:false
+      // isLogin:false
     }
   }
   render() {
@@ -33,15 +33,13 @@ class App extends Component {
               <Route path='/cake' component={Cake}></Route>
               <Route path='/cart' component={Cart}></Route>
               <Route path='/person' component={Person}></Route>
-              <Route path='/login' component={Login}></Route>
-              <Route path='/regist' component={Regist}></Route>
               <Redirect path='/' to='/cake' exact></Redirect>
             </Switch>
           </div>
           <div className='footer_nav'>
             <div className='foot_nav'><NavLink activeClassName='cake_nav' to='/cake'><i className='iconfont icon-zhuye'></i></NavLink></div>
             <div className='foot_nav'><NavLink activeClassName='cake_nav' to='/cart'><i className='iconfont icon-gouwulan'></i><span className='cart_amount'>0</span></NavLink></div>
-            <div className='foot_nav'><NavLink activeClassName='cake_nav' to={this.state.isLogin?'/person':'/login'}><i className='iconfont icon-fl-renyuan'></i></NavLink></div>
+            <div className='foot_nav'><NavLink activeClassName='cake_nav' to='/person'><i className='iconfont icon-fl-renyuan'></i></NavLink></div>
           </div>
         </div>
       </Router>

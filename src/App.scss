@@ -5,19 +5,22 @@
 	flex-direction:column;
 	.cake_main{
 		flex: 1;
+		overflow: auto;
+		width: 100vw;
 	}
 	.footer_nav{
 		width: 100%;
 		margin:0 !important;
 		height: 12.53vw;
-		display: flex;
+		display: fixed;
+		bottom: 0;
 		border-top: 1px solid #cccccc;
 		box-sizing: border-box;
-		
 		>.foot_nav{
-			flex: 1;
+			width: 33.333333vw;
 			line-height: 12.53vw;
 			height: 12.53vw;
+			float: left;
 			.cake_nav{
 				color:#eb5269;
 			}
