@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 
 //首页 购物篮 个人信息
-import Cake from './pages/cake';
-import Cart from './pages/cart';
-import Person from './pages/person';
+import Cake from './index/cake';
+import Cart from './cart/cart';
+import Person from './person/person';
 //注册和登录
-import Login from './pages/login';
-import Regist from './pages/regist';
 //图片
 import './font/iconfont.css';
 import './App.scss';

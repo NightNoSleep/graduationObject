@@ -18,8 +18,8 @@ class Cart extends Component{
 		return(
 			<div className='cake_cart'>
 				<div className='nothing' style={{"display":this.state.hasCart?"none":"block"}}>
-					<img src={shopping} />
-					<Link to='/cake'><img src={go} /></Link>
+					<img src={shopping} alt=''/>
+					<Link to='/cake'><img src={go} alt=''/></Link>
 				</div>
 				<div className='cart_main' style={{"display":this.state.hasCart?"block":"none"}}>
 					

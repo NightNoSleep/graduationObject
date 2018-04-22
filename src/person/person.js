@@ -16,11 +16,11 @@ class Person extends Component{
 	constructor(){
 		super();
 		this.state={
-			isLogin:true
+			isLogin:false
 		}
 	}
 	render(){
-		if (localStorage.getItem('user')!=null) {
+		if (localStorage.getItem('cake_user')!=null) {
 			this.state.isLogin = true;
 		}
 		return(

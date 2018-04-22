@@ -22,6 +22,10 @@
 			letter-spacing: 1px;
 			border-bottom: 1px solid #cccccc;
 		}
+		.alert{
+			border-bottom: none;
+			text-align: center;
+		}
 		div{
 			input{
 				width: 46vw;
@@ -37,6 +41,10 @@
 				border:none;
 				text-align: center;
 				line-height: 10.67vw;
+				img{
+					width: 32vw;
+					height: 10.67vw;
+				}
 			}
 		}
 		div:nth-child(3){

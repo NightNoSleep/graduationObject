@@ -4,14 +4,11 @@ import header from '../img/login_header.jpg';
 import '../font/iconfont.css';
 import { Link } from 'react-router-dom';
 class QuickLogin extends Component{
-	constructor(){
-		super();
-	}
 	render(){
 		return(
 			<div className='cake_quickLogin'>
 				<div className="quickLogin_header">
-					<img src={header} />
+					<img src={header} alt=''/>
 				</div>
 				<div className="quickLogin_main">
 					<input className='phone' type="text" placeholder='请输入您的手机号'/>

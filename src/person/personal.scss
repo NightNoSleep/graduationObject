@@ -1,0 +1,145 @@
+.cake_personal{
+	background: #f5f5f5;
+	width: 100%;
+	height: 100%;
+	.personal_header{
+		width:100%;
+		background: white;
+		height: 22.67vw;
+		padding: 3vw;
+		box-sizing: border-box;
+		img{
+			width:16vw;
+			height:16vw;
+			float: left;
+		}
+		ul{
+			float: left;
+			margin:0;
+			margin-left: -7vw;
+			li{
+				margin-top: 2vw;
+				font-size: 2vw;
+			}
+		}
+		.goPerson{
+			float: right;
+			margin-top: 6vw;
+		}
+	}
+	.personal_nav{
+		height: 20vw;
+		width: 100%;
+		display: flex;
+		background: white;
+		padding: 2.3vw 0;
+		box-sizing: border-box;
+		margin: 5.33vw 0;
+		div{
+			width: 25%;
+			text-align: center;
+			border-right: 1px solid #f5f5f5;
+			box-sizing:border-box;
+			a{
+				display: flex;
+				flex-direction:column;
+				color:black;
+				i{
+					font-size:8vw;
+					color:#dcdcdc;
+					margin-bottom: 2.3vw;
+				}
+				span{
+					font-size: 3vw;
+				}
+			}
+		}
+	}
+	.list{
+		background: #f5f5f5;
+		a{
+			display: block;
+			width: 100%;
+			height: 13.6vw;
+			border-bottom: 1px solid #cccccc;
+			box-sizing: border-box;
+			background: white;
+			.i_nav{
+				display: block;
+				width: 7.34vw;
+				height: 7.34vw;
+				text-align: center;
+				float: left;
+				margin:3vw 4vw 0 8vw;
+				border-radius:50%;
+				background: #ea8484;
+				i{
+					font-size: 6vw;
+					display: block;
+					color:white;
+				}
+			}
+			p{
+				float: left;
+				font-size: 3.4vw;
+				line-height: 6.9vw
+			}
+			.detail{
+				float: right;
+				color:#d7d7d7;
+				font-size: 3.4vw;
+				margin-top: 4.1vw;
+				i{
+					margin-left:5vw; 
+					margin-right: 3vw;
+				}
+			}
+		}
+		a:nth-child(2){
+			.i_nav{
+				background: #2dd1d7;
+				i{
+					font-size: 4.5vw;
+					margin-top: 1vw;
+				}
+			}
+		}
+		a:nth-child(3){
+			margin-bottom: 5vw;
+			.i_nav{
+				background: #e94064;
+				i{
+					font-size: 5vw;
+					margin-top: 1.3vw;
+				}
+			}
+		}
+		a:nth-child(4){
+			.i_nav{
+				background: #e77ba8;
+				i{
+					font-size: 5vw;
+					margin-top: 1vw;
+				}
+			}
+		}
+		a:nth-child(5){
+			margin-bottom: 5vw;
+			.i_nav{
+				background: #f2b052;
+				i{
+					font-size: 6vw;
+				}
+			}
+		}
+		a:nth-child(6){
+			.i_nav{
+				background: #42aee7;
+				i{
+					font-size: 6vw;
+					margin-top: 0.36vw;
+				}
+			}
+		}
+	}
+}
