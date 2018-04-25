@@ -9,7 +9,7 @@ class Login extends Component{
 		super();
 		this.state = {
 			phone:'',
-			pwd:'',
+			password:'',
 			alert:'',
 			canLogin:false
 		}
@@ -41,20 +41,8 @@ class Login extends Component{
 		if (reg.test(e.target.value)&&e.target.value!='') {
 			this.setState({
 				phone:e.target.value,
-				alert:''
-			},function(){
-				axios.get("http://localhost/cake/check.php?phone="+this.state.phone).then(function(res){
-					if (res.data.res_body.status === 1) {
-						_this.setState({
-							canLogin:true
-						})
-					}else{
-						_this.setState({
-							phone:'',
-							alert:'手机号未注册'
-						})
-					}
-				})
+				alert:'',
+				canLogin:true
 			})
 			
 		}else{
@@ -67,7 +55,7 @@ class Login extends Component{
 		var reg = /\w{6,}/g;
 		if (reg.test(e.target.value)) {
 			this.setState({
-				pwd:e.target.value,
+				password:e.target.value,
 				alert:''
 			})
 		}else{
@@ -78,15 +66,11 @@ class Login extends Component{
 	}
 	handleLogin(){
 		var _this = this;
-		if (this.state.canLogin&&this.state.pwd!='') {
-			axios.get('http://localhost/cake/login.php?phone='+this.state.phone+'&password='+this.state.pwd).then(function(res){
-				if (res.data.res_code===0) {
+		if (this.state.canLogin&&this.state.password!='') {
+			axios.post("/api/login",{phone:this.state.phone,password:this.state.password}).then(function(res){
+				if (res.data.code==0) {
 					localStorage.setItem('cake_user',_this.state.phone);
 					_this.props.history.replace('/personal');
-				}else{
-					_this.setState({
-						alert:'密码错误'
-					})
 				}
 			})
 		}

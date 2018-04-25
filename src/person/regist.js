@@ -4,7 +4,6 @@ import './regist.scss';
 import { Link } from 'react-router-dom';
 import header from '../img/login_header.jpg';
 
-import regist from '../php/regist.php';
 class Regist extends Component{
 	constructor(){
 		super();
@@ -12,7 +11,7 @@ class Regist extends Component{
 			img_path:'',
 			img_text:'',
 			phone:'',
-			pwd:'',
+			password:'',
 			cfmPwd:'',
 			alert:'',
 			canLogin:false
@@ -58,8 +57,8 @@ class Regist extends Component{
 				phone:e.target.value,
 				alert:''
 			},function(){
-				axios.get("http://localhost/cake/check.php?phone="+this.state.phone).then(function(res){
-					if (res.data.res_body.status == 0) {
+				axios.post("/api/checkPhone",{phone:_this.state.phone}).then(function(res){
+					if (res.data.code == 0) {
 						_this.setState({
 							alert:'手机号可以注册'
 						})
@@ -97,7 +96,7 @@ class Regist extends Component{
 		var reg = /\w{6,}/g;
 		if (reg.test(e.target.value)) {
 			this.setState({
-				pwd:e.target.value,
+				password:e.target.value,
 				alert:''
 			})
 		}else{
@@ -108,7 +107,7 @@ class Regist extends Component{
 	}
 	//获取第二次密码 并验证 
 	getCfmPwd(e){
-		if (this.state.pwd == e.target.value) {
+		if (this.state.password == e.target.value) {
 			this.setState({
 				cfmPwd:e.target.value,
 				alert:''
@@ -123,8 +122,8 @@ class Regist extends Component{
 		e.preventDefault();
 		var _this = this;
 		if (this.state.canLogin&&this.state.phone!=''&&this.state.cfmPwd!='') {
-			axios.get('http://localhost:/regist.php?phone='+this.state.phone+'&password='+this.state.pwd).then(function(res){
-				if (res.data.res_code == 0) 
+			axios.post('/api/regist',{phone:this.state.phone,password:this.state.password}).then(function(res){
+				if (res.data.code == 0) 
 					_this.props.history.push('/login');
 				else{
 					_this.setState({

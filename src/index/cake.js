@@ -48,7 +48,6 @@ class Cake extends Component{
 			types:['芝士系列','巧克力系列','拿破仑系列','慕斯系列','乳脂系列','选拼系列','定制蛋糕','翻糖定制','星座系列','阿狸系列'],
 			cake_types:true,
 			taste:''
-
 		}
 		this.handleAddress = this.handleAddress.bind(this);
 		this.over = this.over.bind(this);
@@ -57,6 +56,7 @@ class Cake extends Component{
 		this.out = this.out.bind(this);
 		this.handleType = this.handleType.bind(this);
 		this.handleChangeType = this.handleChangeType.bind(this);
+		this.handleDel = this.handleDel.bind(this);
 	}
 	render(){
 		var _this = this;
@@ -89,8 +89,8 @@ class Cake extends Component{
 					<Link to='/login'><img src={icon5} alt=""/><span>卡券兑换</span></Link>
 				</div>
 				<div className='types'>
-					<span className='curr all' onClick={this.handleChangeType}>全部</span>
-					<span className='type' onClick={this.handleChangeType} style={{display:this.state.taste!=''?'block':'none'}}>{this.state.taste}<i className='iconfont icon-delete' style={{"display":this.state.type?"block":"none"}}></i></span>
+					<span  id="all" className='curr all' onClick={this.handleChangeType}>全部</span>
+					<span className='type' onClick={this.handleChangeType} style={{display:this.state.taste!=''?'block':'none'}}>{this.state.taste}<i onClick={this.handleDel} className='iconfont icon-delete' style={{"display":this.state.type?"block":"none"}}></i></span>
 					<p onClick={this.handleType}>
 						<i className='iconfont icon-loudoushaixuan'></i>
 						筛选
@@ -156,7 +156,7 @@ class Cake extends Component{
 	}
 	handleChangeType(e){
 		document.querySelector('.curr').className='';
-		e.target.className='curr';
+		e.currentTarget.className='curr';
 		if (e.target.innerText!='全部') {
 			this.setState({
 				type:true
@@ -166,6 +166,11 @@ class Cake extends Component{
 				type:false
 			})
 		}
+	}
+	handleDel(){
+		this.setState({
+			taste:''
+		})
 	}
 }
 

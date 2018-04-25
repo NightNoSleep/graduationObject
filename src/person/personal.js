@@ -1,9 +1,13 @@
 import React,{ Component } from 'react';
-import { Link } from 'react-router-dom';
+import { 
+	Link ,
+	Route
+} from 'react-router-dom';
 import head from '../img/timg.jpg';
 import '../font/iconfont.css';
 import './personal.scss';
 
+import Main1 from './personal/main1';
 class List extends Component{
 	render(){
 		let {cN,type,more,url} = this.props.link;
@@ -12,7 +16,7 @@ class List extends Component{
 				<span className='i_nav'>
 					<i className={'iconfont '+cN}></i>
 				</span>
-				<p>{type}</p>
+				<p className='personal_type'>{type}</p>
 				<span className='detail'>
 					{more}
 					<i className='iconfont icon-iconfonticonfonti2copycopy'></i>
@@ -25,10 +29,10 @@ class Personal extends Component{
 	constructor(){
 		super();
 		this.state = {
-			phone : 15283769527,
+			phone : localStorage.getItem('cake_user'),
 			score : 1000,
 			lists:[{
-				url:'/login',
+				url:'/main1',
 					cN:'icon-dingdan',
 					type:'全部订单',
 					more:'查看全部已购商品'
@@ -53,7 +57,7 @@ class Personal extends Component{
 					type:'兑换专区',
 					more:'积分商城'
 				},{
-					url:'/login',
+					url:'/set',
 					cN:'icon-shezhi',
 					type:'设置',
 					more:'修改密码、设置发货地址和发票'
@@ -75,10 +79,10 @@ class Personal extends Component{
 					<i className='goPerson iconfont icon-iconfonticonfonti2copycopy'></i>
 				</div>
 				<div className='personal_nav'>
-					<div><a href=""><i className='iconfont icon-qianbao'></i><span>待支付</span></a></div>
-					<div><a href=""><i className='iconfont icon-fahuo'></i><span>待发货</span></a></div>
-					<div><a href=""><i className='iconfont icon-tubiaolunkuo-'></i><span>待收货</span></a></div>
-					<div><a href=""><i className='iconfont icon-pinglun'></i><span>待评价</span></a></div>
+					<div><Link to='/main1'><i  className='iconfont icon-qianbao'></i><span>待支付</span></Link></div>
+					<div><Link to='/main1'><i  className='iconfont icon-fahuo'></i><span>待发货</span></Link></div>
+					<div><Link to='/main1'><i  className='iconfont icon-tubiaolunkuo-'></i><span>待收货</span></Link></div>
+					<div><Link to='/main1'><i  className='iconfont icon-pinglun'></i><span>待评价</span></Link></div>
 				</div>
 				<div className="list">
 						{lists}

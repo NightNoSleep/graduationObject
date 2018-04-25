@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import Cake from './index/cake';
 import Cart from './cart/cart';
 import Person from './person/person';
-
 //antd
 import { Badge } from 'antd';
 //注册和登录
@@ -45,13 +44,10 @@ class App extends Component {
               </NavLink>
             </div>
             <div className='foot_nav'>
-              
-                <NavLink activeClassName='cake_nav' to='/cart'>
-                  <i className='iconfont icon-gouwulan'></i>
-                  <Badge count={this.state.num}>
-                  </Badge>
-                </NavLink>
-              
+              <NavLink activeClassName='cake_nav' to='/cart'>
+                <i className='iconfont icon-gouwulan'></i>
+                <span className='cart_amount'>0</span>
+              </NavLink>
             </div>
             <div className='foot_nav'>
               <NavLink activeClassName='cake_nav' to='/person'>

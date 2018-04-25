@@ -20,5 +20,10 @@
     "node-sass": "^4.8.3",
     "sass-loader": "^7.0.1"
   },
-  "proxy": "http://qxu1606560085.my3w.com"
+  "proxy": {
+    "/api":{
+      "target":"http://localhost:8864",
+      "changeOrigin":true
+    }
+  }
 }
