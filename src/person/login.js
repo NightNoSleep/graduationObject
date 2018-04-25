@@ -3,15 +3,19 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import header from '../img/login_header.jpg';
 import './login.scss'
+import axios from 'axios';
 class Login extends Component{
 	constructor(){
 		super();
 		this.state = {
 			phone:'',
-			pwd:''
+			pwd:'',
+			alert:'',
+			canLogin:false
 		}
 		this.getPhone = this.getPhone.bind(this);
 		this.getPwd = this.getPwd.bind(this);
+		this.handleLogin = this.handleLogin.bind(this);
 	}
 	render(){
 		return(
@@ -20,10 +24,11 @@ class Login extends Component{
 					<img src={header} alt=''/>
 				</div>
 				<div className='login_main'>
-					<input className='phone' onBlur={this.getPhone} type="text" placeholder="请输入您的手机号" />
+					<input className='phone' onBlur={this.getPhone} type="number" pattern="[0-9]*" placeholder="请输入您的手机号" />
 					<input className='password' onBlur={this.getPwd} type="password" placeholder="请输入密码" />
 					<Link to='/regist' className='loginToRegist'>忘记密码 ></Link>
-					<input className="login_submit" type="submit" value="登  陆" />
+					<input className='alert' readOnly unselectable="on" value={this.state.alert} />
+					<input  className="login_submit" onClick={this.handleLogin} type="submit" value="登  陆" />
 					<Link to='/regist' className="login_regist">立即注册</Link>
 					<Link to='/quickLogin' className='quickLogin'>快速登录 ></Link>
 				</div>
@@ -31,10 +36,60 @@ class Login extends Component{
 		)
 	}
 	getPhone(e){
-
+		var reg = /^1[3|4|5|8][0-9]\d{4,8}$/g,
+			_this = this;
+		if (reg.test(e.target.value)&&e.target.value!='') {
+			this.setState({
+				phone:e.target.value,
+				alert:''
+			},function(){
+				axios.get("http://localhost/cake/check.php?phone="+this.state.phone).then(function(res){
+					if (res.data.res_body.status === 1) {
+						_this.setState({
+							canLogin:true
+						})
+					}else{
+						_this.setState({
+							phone:'',
+							alert:'手机号未注册'
+						})
+					}
+				})
+			})
+			
+		}else{
+			_this.setState({
+				alert:'手机号格式不对'
+			})
+		}
 	}
 	getPwd(e){
-		
+		var reg = /\w{6,}/g;
+		if (reg.test(e.target.value)) {
+			this.setState({
+				pwd:e.target.value,
+				alert:''
+			})
+		}else{
+			this.setState({
+				alert:'密码至少6位'
+			})
+		}
+	}
+	handleLogin(){
+		var _this = this;
+		if (this.state.canLogin&&this.state.pwd!='') {
+			axios.get('http://localhost/cake/login.php?phone='+this.state.phone+'&password='+this.state.pwd).then(function(res){
+				if (res.data.res_code===0) {
+					localStorage.setItem('cake_user',_this.state.phone);
+					_this.props.history.replace('/personal');
+				}else{
+					_this.setState({
+						alert:'密码错误'
+					})
+				}
+			})
+		}
 	}
 }
 

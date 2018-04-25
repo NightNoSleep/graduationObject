@@ -1,3 +1,4 @@
+@import '~antd/dist/antd.css';
 .app_cake{
 	width: 100%;
 	height: 100%;
@@ -12,7 +13,6 @@
 		width: 100%;
 		margin:0 !important;
 		height: 12.53vw;
-		display: fixed;
 		bottom: 0;
 		border-top: 1px solid #cccccc;
 		box-sizing: border-box;
@@ -37,19 +37,9 @@
 		}
 		.foot_nav:nth-child(2){
 			position: relative;
-			.cart_amount{
-				position:absolute;
-				top: 1.5vw;
-				left:19vw;
-				width: 4vw;
-				font-size: 2vw;
-				text-align: center;
-				display: block;
-				line-height: 4vw;
-				height: 4vw;
-				border-radius: 50%;
-				background: #eb5269;
-				color:white;
+			.ant-badge{
+				top:-17vw!important;
+				left:4vw!important;
 			}
 		}
 	}

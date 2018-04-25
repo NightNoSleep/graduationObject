@@ -20,16 +20,15 @@ class Person extends Component{
 		}
 	}
 	render(){
-		if (localStorage.getItem('cake_user')!=null) {
+		if (localStorage.getItem('cake_user')!=null) 
 			this.state.isLogin = true;
-		}
 		return(
 			<Router>
 					<Switch>
 						<Route path='/regist' component={Regist}></Route>
-						<Route path='/login' component={Login}></Route>
 						<Route path='/quickLogin' component={QuickLogin}></Route>
 						<Route path='/personal' component={Personal}></Route>
+						<Route path='/login' component={Login}></Route>
 						<Redirect to={this.state.isLogin?"/personal":"/login"}></Redirect>
 					</Switch>
 			</Router>
