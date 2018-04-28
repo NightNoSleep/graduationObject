@@ -22,7 +22,7 @@
   },
   "proxy": {
     "/api":{
-      "target":"http://localhost:8864",
+      "target":"http://10.7.154.77:8864",
       "changeOrigin":true
     }
   }

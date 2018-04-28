@@ -34,7 +34,7 @@ class App extends Component {
               <Route path='/cake' component={Cake}></Route>
               <Route path='/cart' component={Cart}></Route>
               <Route path='/person' component={Person}></Route>
-              <Redirect path='/' to='/cake' exact></Redirect>
+              <Redirect path='' to='/cake' exact></Redirect>
             </Switch>
           </div>
           <div className='footer_nav'>
