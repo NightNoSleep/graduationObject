@@ -1,6 +1,5 @@
 import React ,{ Component } from 'react';
 import './quickLogin.scss';
-import header from '../img/login_header.jpg';
 import '../font/iconfont.css';
 import { Link } from 'react-router-dom';
 class QuickLogin extends Component{
@@ -8,7 +7,7 @@ class QuickLogin extends Component{
 		return(
 			<div className='cake_quickLogin'>
 				<div className="quickLogin_header">
-					<img src={header} alt=''/>
+					<img src="./img/login_header.jpg" alt=''/>
 				</div>
 				<div className="quickLogin_main">
 					<input className='phone' type="text" placeholder='请输入您的手机号'/>

@@ -1,0 +1,52 @@
+.setAddress{
+	.address{
+		width: 100%;
+		height: 17.33vw;
+		font-size: 3vw;
+		line-height: 17.33vw;
+		display: flex;
+		background: white;
+		i:nth-child(1){
+			font-size: 7vw;
+			display: block;
+			width: 8vw;
+			margin:0.5vw 1vw 0 3vw;
+			height: 8vw;
+		}
+		div{
+			p{
+				background: white;
+				width: 80vw;
+				margin:0;
+				line-height: 6.6vw;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			p:nth-child(1){
+				margin-top: 2vw;
+			}
+		}
+	}
+	#currAddress{
+		background: #45515e;
+		color:white;
+		p{
+			background: #45515e!important;
+			color:white;
+		}
+	}
+	.addAddress{
+		width: 100%;
+		outline: none;
+		border:none;
+		height: 13vw;
+		background: #e9546b;
+		color:white;
+		font-size: 3.6vw;
+		text-align: center;
+		text-indent: 0;
+		position: absolute;
+		bottom:0;
+	}
+}

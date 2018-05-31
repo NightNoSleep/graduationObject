@@ -1,0 +1,81 @@
+.incAddress{
+	height: 75vw;
+	width: 100%;
+	.write{
+		height: 60vw;
+		width: 100%;
+		div{
+			height: 12vw;
+			background: white;
+			box-sizing: border-box;
+			border-bottom: 1px solid #dcdcdc;
+			line-height: 12vw;
+			color:#dcdcdc;
+			span{
+				margin-left: 4vw;
+				float: left;
+			}
+		}
+		.set_city{
+			width: 100%;
+			display: flex;
+			height: 12vw;
+			input{
+				width: 33.333333%;
+				text-align: center;
+				outline: none;
+				border:none;
+			}
+		}
+		.same_input{
+			input{
+				float: right;
+				height: 8vw;
+				margin-top: 2vw;
+				outline: none;
+				text-align: right;
+				border:none;
+				margin-right: 4vw;
+			}
+		}
+	}
+	.moren{
+		width: 100%;
+		height: 10vw;
+		line-height: 10vw;
+		text-align: right;
+		margin-top: 5vw;
+		padding-right: 4vw;
+		box-sizing: border-box;
+		font-size: 4vw;
+		i{
+			font-size: 5vw;
+			width: 5vw;
+			height: 5vw;
+			display: block;
+			float: right;
+			margin-right: 2vw;
+			line-height: 5vw;
+			margin-top: 2vw;
+		}
+		i:nth-child(2){
+			font-size: 6vw;
+		}
+		.zhong{
+			color:#e9546b;
+		}
+		span{
+			line-height: 9vw;
+			float: right;
+		}
+	}
+	.submit_address{
+		background: #e9546b;
+		color:white;
+		border:none;
+		outline: none;
+		width: 100%;
+		height: 10vw;
+		margin-top: 10vw;
+	}
+}

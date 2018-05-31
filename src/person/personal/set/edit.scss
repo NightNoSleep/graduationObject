@@ -1,0 +1,27 @@
+.editpwd{
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	padding:0 10vw;
+	input,button{
+		width: 100%;
+		box-sizing: border-box;
+		height: 10.67vw;
+		border:none;
+		margin-top: 3vw;
+		outline: none;
+		font-size: 4.13vw;
+		text-indent: 1em;
+		letter-spacing: 1px;
+		border-bottom: 1px solid #cccccc;
+	}
+	.alertInput{
+		text-align: center;
+		text-indent: 0;
+	}
+	button{
+		background:#eb5269;
+		color:white;
+		text-indent: 0;
+	}
+}

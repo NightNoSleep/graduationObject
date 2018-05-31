@@ -5,9 +5,10 @@ import Login from './login';
 import Regist from './regist';
 import QuickLogin from './quickLogin';
 import Personal from './personal';
+import Ticket from './personal/set/ticket';
 
-import Main1 from './personal/main1';
-import Set from './personal/set';
+import Main1 from './personal/main1/main1';
+import Set from './personal/set/set';
 
 import {
 	BrowserRouter as Router,
@@ -33,8 +34,9 @@ class Person extends Component{
 						<Route path='/personal' component={Personal}></Route>
 						<Route path='/main1' component={Main1}></Route>
 						<Route path='/set' component={Set}></Route>
+						<Route path='/ticket' component={Ticket}></Route>
 						<Route path='/login' component={Login}></Route>
-						<Redirect to={this.state.isLogin?"/personal":"/login"}></Redirect>
+						<Redirect to={this.state.isLogin?"/personal":"/login"} exact></Redirect>
 					</Switch>
 			</Router>
 		)

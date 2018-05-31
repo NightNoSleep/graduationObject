@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './cart.scss';
 
-import shopping from '../img/hint.png';
-import go from '../img/stroll.png';
 import { Link } from 'react-router-dom';
 
 class Cart extends Component{
@@ -18,8 +16,8 @@ class Cart extends Component{
 		return(
 			<div className='cake_cart'>
 				<div className='nothing' style={{"display":this.state.hasCart?"none":"block"}}>
-					<img src={shopping} alt=''/>
-					<Link to='/cake'><img src={go} alt=''/></Link>
+					<img src="./img/hint.png" alt=''/>
+					<Link to='/cake'><img src="./img/stroll.png" alt=''/></Link>
 				</div>
 				<div className='cart_main' style={{"display":this.state.hasCart?"block":"none"}}>
 					

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import { Link } from 'react-router-dom';
-import header from '../img/login_header.jpg';
 import './login.scss'
 import axios from 'axios';
 class Login extends Component{
@@ -21,7 +20,7 @@ class Login extends Component{
 		return(
 			<div className="cake_login">
 				<div className="login_header">
-					<img src={header} alt=''/>
+					<img src="./img/login_header.jpg" alt=''/>
 				</div>
 				<div className='login_main'>
 					<input className='phone' onBlur={this.getPhone} type="number" pattern="[0-9]*" placeholder="请输入您的手机号" />
@@ -40,7 +39,7 @@ class Login extends Component{
 			_this = this;
 		if (reg.test(e.target.value)&&e.target.value!='') {
 			this.setState({
-				phone:e.target.value,
+				phone:e.target.value.trim(),
 				alert:'',
 				canLogin:true
 			})
@@ -55,7 +54,7 @@ class Login extends Component{
 		var reg = /\w{6,}/g;
 		if (reg.test(e.target.value)) {
 			this.setState({
-				password:e.target.value,
+				password:e.target.value.trim(),
 				alert:''
 			})
 		}else{
@@ -69,8 +68,12 @@ class Login extends Component{
 		if (this.state.canLogin&&this.state.password!='') {
 			axios.post("/api/login",{phone:this.state.phone,password:this.state.password}).then(function(res){
 				if (res.data.code==0) {
-					localStorage.setItem('cake_user',_this.state.phone);
+					localStorage.setItem('cake_user',JSON.stringify(_this.state.phone));
 					_this.props.history.replace('/personal');
+				}else{
+					_this.setState({
+						alert:res.data.msg
+					})
 				}
 			})
 		}

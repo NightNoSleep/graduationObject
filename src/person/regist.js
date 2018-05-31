@@ -2,7 +2,6 @@ import React,{ Component } from 'react';
 import axios from 'axios';
 import './regist.scss';
 import { Link } from 'react-router-dom';
-import header from '../img/login_header.jpg';
 
 class Regist extends Component{
 	constructor(){
@@ -27,7 +26,7 @@ class Regist extends Component{
 		return(
 			<div className="cake_regist">
 				<div className="regist_header">
-					<img src={header} alt=''/>
+					<img src="./img/login_header.jpg" alt=''/>
 				</div>
 				<div className='regis_main'>
 					<input className='phone' onBlur={this.getPhone}  type="number" placeholder='请输入您的手机号码'/>
@@ -54,7 +53,7 @@ class Regist extends Component{
 		var _this = this;
 		if (reg.test(e.target.value)&&e.target.value!='') {
 			this.setState({
-				phone:e.target.value,
+				phone:e.target.value.trim(),
 				alert:''
 			},function(){
 				axios.post("/api/checkPhone",{phone:_this.state.phone}).then(function(res){
@@ -96,7 +95,7 @@ class Regist extends Component{
 		var reg = /\w{6,}/g;
 		if (reg.test(e.target.value)) {
 			this.setState({
-				password:e.target.value,
+				password:e.target.value.trim(),
 				alert:''
 			})
 		}else{
@@ -109,7 +108,7 @@ class Regist extends Component{
 	getCfmPwd(e){
 		if (this.state.password == e.target.value) {
 			this.setState({
-				cfmPwd:e.target.value,
+				cfmPwd:e.target.value.trim(),
 				alert:''
 			})
 		}else{
